@@ -2,23 +2,24 @@
 
 {% block body %}
           <div class="container-fluid card p-4">
-        <form >
+        <form action="{% url 'register' %}" method="POST">
+            {% csrf_token %}
             <div class="row mb-3">
               <label for="username" class="col-sm-2 col-form-label">Username</label>
               <div class="col-sm-10">
-                <input type="email" class="form-control" placeholder="Choose a username" id="username">
+                <input class="form-control" placeholder="Choose a username" name="username" id="username">
               </div>
             </div>
             <div class="row mb-3">
               <label for="password" class="col-sm-2 col-form-label">Password</label>
               <div class="col-sm-10">
-                <input type="password" placeholder="Choose a strong password" class="form-control" id="password">
+                <input type="password" name="password" placeholder="Choose a strong password" class="form-control" id="password">
               </div>
             </div>
             <div class="row mb-3">
               <label for="cpassword" class="col-sm-2 col-form-label">Confirm Password</label>
               <div class="col-sm-10">
-                <input type="password" placeholder="Confirm your password" class="form-control" id="cpassword">
+                <input type="password" name="cpassword" placeholder="Confirm your password" class="form-control" id="cpassword">
               </div>
             </div>
            

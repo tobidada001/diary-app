@@ -29,8 +29,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'Diary'
+    'Diary',
+    'ckeditor',
 ]
+
+CKEDITOR_UPLOAD_PATH = BASE_DIR/'media'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

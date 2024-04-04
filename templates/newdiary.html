@@ -8,17 +8,18 @@
 
             
           <div class="container-fluid card p-4">
-            <form >
+            <form method="POST">
+                {% csrf_token %}
                 <div class="row mb-3">
                   <label for="diarytitle" class="col-sm-2 col-form-label">Title</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control"  id="diarytitle">
+                    <input type="text" name="title" class="form-control"  id="diarytitle">
                   </div>
                 </div>
                 <div class="row mb-3">
                   <label for="body" class="col-sm-2 col-form-label">body</label>
                   <div class="col-sm-10">
-                    <textarea name="" class="form-control" id="" rows="7"></textarea>
+                    <textarea name="body" class="form-control"  id="" rows="7"></textarea>
                   </div>
                 </div>
               
@@ -27,6 +28,28 @@
               </form>
     
             </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
