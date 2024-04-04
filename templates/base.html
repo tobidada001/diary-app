@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'js/bootstrap.bundle.min.js' %}">
+</head>
+<body>
+
+
+    <div class="container">
+
+        <nav class="navbar navbar-expand-lg mb-5 navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#" style="font-family: cursive;">Diary Freak</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mx-auto me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Your Diaries</a>
+                  </li>
+                
+                </ul>
+                <span class="navbar-text">
+                    <button class="btn bg-warning" type="submit">New Diary</button>
+                    <button class="btn btn-outline-success" type="submit">Login</button>
+                    <button class="btn text-white bg-dark" type="submit">Sign Up</button>
+                </span>
+              </div>
+            </div>
+          </nav>
+
+          
+          {% block body %}
+            
+          {% endblock body %}
+            
+
+                   
+</div>
+
+</body>
+</html>
