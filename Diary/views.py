@@ -101,6 +101,7 @@ def landingpage(request):
     return render(request, 'landingpage.html')
 
 
+@login_required(login_url='/login/')
 def open_diary(request, id):
     item_to_read = get_object_or_404(Diary, id=id, owner = request.user)
     return render(request, 'readdiary.html', {'item_to_read': item_to_read})
