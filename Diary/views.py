@@ -5,9 +5,6 @@ from django.contrib.auth import login, logout, authenticate, get_user_model
 from django.contrib.auth.decorators import login_required
 
 
-
-
-
 # Create your views here.
 @login_required(login_url='/login/')
 def index(request):
@@ -81,7 +78,7 @@ def signin(request):
                 if auth:
                     login(request, auth)
                     messages.success(request, "Logged in.")
-                    return redirect('index')
+                    return redirect('diary')
                 else:
                     messages.error(request, "Please, check your details and try again.")
                     return redirect('signin')
