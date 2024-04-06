@@ -1,9 +1,15 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from Diary.models import Diary
 from django.contrib import messages
 from django.contrib.auth import login, logout, authenticate, get_user_model
+from django.contrib.auth.decorators import login_required
+
+
+
+
 
 # Create your views here.
+@login_required(login_url='/login/')
 def index(request):
     if request.user.is_authenticated:
         diaries = Diary.objects.filter(owner = request.user)
@@ -12,6 +18,7 @@ def index(request):
     return render(request, 'index.html', {'mydiaries' : diaries})
 
 
+@login_required(login_url='/login/')
 def new_diary(request):
 
     if request.method == 'POST':
@@ -84,6 +91,7 @@ def signin(request):
         
     return render(request, 'signin.html')
 
+
 def signout(request):
     logout(request)
     return redirect('landingpage')
@@ -91,3 +99,8 @@ def signout(request):
 
 def landingpage(request):
     return render(request, 'landingpage.html')
+
+
+def open_diary(request, id):
+    item_to_read = get_object_or_404(Diary, id=id, owner = request.user)
+    return render(request, 'readdiary.html', {'item_to_read': item_to_read})

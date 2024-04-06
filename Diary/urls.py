@@ -9,5 +9,6 @@ urlpatterns = [
     path('login/', views.signin, name="signin" ),
     path('logout/', views.signout, name="logout" ),
     path('landing-page/', views.landingpage, name="landingpage" ),
+    path('open-diary/<int:id>/', views.open_diary, name='open_diary'),
 
 ]

@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth import get_user_model
 from ckeditor.fields import RichTextField
+from django.utils import timezone
 
 # Create your models here.
 class Diary(models.Model):
@@ -8,6 +9,7 @@ class Diary(models.Model):
     title = models.CharField(max_length=200)
     body = RichTextField()
     datecreated = models.DateTimeField(auto_now_add=True)
+    dateupdated = models.DateTimeField(auto_now=True, blank=True, null=True)
 
     def __str__(self):
         return self.title

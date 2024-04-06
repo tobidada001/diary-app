@@ -8,15 +8,16 @@
     {% for diary in mydiaries  %}
          
    <div class="col">
-    <a href="" class="text-decoration-none ">
+    <a href="{% url 'open_diary' diary.id %}" class="text-decoration-none ">
         
     <div class="card shadow-sm border-success mb-3 " >
+        <div class="card-header bg-transparent border-success text-dark"><small>Added: {{diary.datecreated}}</small></div>
        
         <div class="card-body text-success">
-          <h5 class="card-title">{{diary.title|truncatechars:"23"}}</h5>
+          <h6 class="card-title">{{diary.title|truncatechars:"23"}}</h6>
           <p class="card-text">{{diary.body |truncatechars:"70"}}</p>
         </div>
-        <div class="card-footer bg-transparent border-success text-dark">{{diary.datecreated}}</div>
+        <div class="card-footer bg-transparent border-success text-dark"><small>Updated: {{diary.dateupdated}}</small></div>
       </div>
     </a>
    </div>
